@@ -11,6 +11,8 @@ Features:
 + Supported text separators: | and ~
 + Unlimited nesting
 
+Example:
+
 	text := "{Hello|Big} {world|people}!"
 	fmt.Println(spinner.Spin(text))
 	// Will print: Hello world! or Big world! or Hello people! or Big people!

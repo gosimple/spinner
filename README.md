@@ -11,6 +11,7 @@ Package `spinner` implements simple text spinner.
 + Supported text separators: | and ~
 + Unlimited nesting
 
+## Example
 
 	text := "{Hello|Big} {world|people}!"
 	fmt.Println(spinner.Spin(text))
