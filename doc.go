@@ -7,9 +7,10 @@
 Package spinner implements text spinner.
 
 Features:
-+ Supported brackets: curly ({}) and square ([])
-+ Supported text separators: | and ~
-+ Unlimited nesting
+
+ + Supported brackets: curly ({}) and square ([])
+ + Supported text separators: | and ~
+ + Unlimited nesting
 
 Example:
 
@@ -18,6 +19,7 @@ Example:
 	// Will print: Hello world! or Big world! or Hello people! or Big people!
 
 Requests or bugs?
+
 https://bitbucket.org/gosimple/spinner/issues
 */
 package spinner
