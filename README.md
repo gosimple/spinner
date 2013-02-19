@@ -5,8 +5,15 @@ Package `spinner` implements simple text spinner.
 
 [Documentation online](http://godoc.org/bitbucket.org/gosimple/spinner)
 
-	text := "[Hello|Big] [world|people]!"
-	spinnedText := spinner.Spin(text)
+## Features
+
++ Supported brackets: curly ({}) and square ([])
++ Supported text separators: | and ~
++ Unlimited nesting
+
+	text := "{Hello|Big} {world|people}!"
+	fmt.Println(spinner.Spin(text))
+	// Will print: Hello world! or Big world! or Hello people! or Big people!
 
 ### Requests or bugs? 
 <https://bitbucket.org/gosimple/spinner/issues>
