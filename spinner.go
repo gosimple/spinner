@@ -20,29 +20,29 @@ func init() {
 // Spin returns a spinned text.
 func Spin(text string) (spinned string) {
 	var openBr int
-	var braces [][2]int
+	var brOpenPos, brClosePos int
 	repl := strings.NewReplacer("[", "{", "]", "}", "~", "|")
 	text = repl.Replace(text)
 	endString := text
 	if strings.ContainsAny(text, "{}") {
 		for ind, sym := range text {
 			if string(sym) == "{" {
-				temp := [2]int{0, 0}
-				braces = append(braces, temp)
-				braces[openBr][0] = ind
+				if openBr == 0 {
+					brOpenPos = ind
+				}
 				openBr += 1
 			} else if string(sym) == "}" {
 				openBr -= 1
-				braces[openBr][1] = ind
+				brClosePos = ind
 				if openBr == 0 && strings.Contains(text[:ind], "{") {
 					endString = strings.Replace(
 						endString,
-						text[braces[openBr][0]:braces[openBr][1]+1],
-						Spin(text[braces[openBr][0]+1:braces[openBr][1]]),
+						text[brOpenPos:brClosePos+1],
+						Spin(text[brOpenPos+1:brClosePos]),
 						1)
 					return Spin(endString)
 				} else if openBr == 0 {
-					return Spin(text[braces[openBr][0] : braces[openBr][1]+1])
+					return Spin(text[brOpenPos : brClosePos+1])
 				}
 			}
 		}
