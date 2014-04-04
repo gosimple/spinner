@@ -20,6 +20,6 @@ Example:
 
 Requests or bugs?
 
-https://bitbucket.org/gosimple/spinner/issues
+https://github.com/gosimple/spinner/issues
 */
 package spinner
