@@ -3,7 +3,7 @@ spinner
 
 Package `spinner` implements simple text spinner.
 
-[Documentation online](http://godoc.org/bitbucket.org/gosimple/spinner)
+[Documentation online](http://godoc.org/github.com/gosimple/spinner)
 
 ## Features
 
@@ -18,11 +18,11 @@ Package `spinner` implements simple text spinner.
 	// Will print: Hello world! or Big world! or Hello people! or Big people!
 
 ### Requests or bugs? 
-<https://bitbucket.org/gosimple/spinner/issues>
+<https://github.com/gosimple/spinner/issues>
 
 ## Installation
 
-	go get -u bitbucket.org/gosimple/spinner
+	go get -u github.com/gosimple/spinner
 
 ## License
 
