@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bitbucket.org/gosimple/spinner"
+	"github.com/gosimple/spinner"
 	"fmt"
 )
 
