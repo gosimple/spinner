@@ -30,6 +30,21 @@ var SpinTests = []struct {
 			"I like a few types of tacos.",
 		},
 	},
+	{"{I like some}}} pizza.",
+		[]string{
+			"I like some}} pizza.",
+		},
+	},
+	{"I like some}{} pizza.",
+		[]string{
+			"I like some} pizza.",
+		},
+	},
+	{"{{{I like some} pizza.",
+		[]string{
+			"{{I like some pizza.",
+		},
+	},
 }
 
 func TestSpin(t *testing.T) {
@@ -37,7 +52,7 @@ func TestSpin(t *testing.T) {
 		spinned := Spin(st.in)
 		if !contain(st.out, spinned) {
 			t.Errorf(
-				"%d. Spin(%v) => out = %v, want one of %v",
+				"%d. Spin(%q) => out = %q, want one of %q",
 				index, st.in, spinned, st.out)
 		}
 	}

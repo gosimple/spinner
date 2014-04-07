@@ -32,17 +32,17 @@ func Spin(text string) (spinned string) {
 				}
 				openBr += 1
 			} else if string(sym) == "}" {
-				openBr -= 1
-				brClosePos = ind
-				if openBr == 0 && strings.Contains(text[:ind], "{") {
-					endString = strings.Replace(
-						endString,
-						text[brOpenPos:brClosePos+1],
-						Spin(text[brOpenPos+1:brClosePos]),
-						1)
-					return Spin(endString)
-				} else if openBr == 0 {
-					return Spin(text[brOpenPos : brClosePos+1])
+				if openBr > 0 {
+					openBr -= 1
+					brClosePos = ind
+					if openBr == 0 || !strings.Contains(text[ind+1:], "}") {
+						endString = strings.Replace(
+							endString,
+							text[brOpenPos:brClosePos+1],
+							Spin(text[brOpenPos+1:brClosePos]),
+							1)
+						return Spin(endString)
+					}
 				}
 			}
 		}
