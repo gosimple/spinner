@@ -30,10 +30,10 @@ func Spin(text string) (spinned string) {
 				if openBr == 0 {
 					brOpenPos = ind
 				}
-				openBr += 1
+				openBr++
 			} else if string(sym) == "}" {
 				if openBr > 0 {
-					openBr -= 1
+					openBr--
 					brClosePos = ind
 					if openBr == 0 || !strings.Contains(text[ind+1:], "}") {
 						endString = strings.Replace(
