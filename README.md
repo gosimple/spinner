@@ -3,6 +3,9 @@ spinner
 
 Package `spinner` implements simple text spinner.
 
+[![GoDoc](https://godoc.org/github.com/gosimple/spinner?status.png)](https://godoc.org/github.com/gosimple/spinner)
+[![Build Status](https://drone.io/github.com/gosimple/spinner/status.png)](https://drone.io/github.com/gosimple/spinner/latest)
+
 [Documentation online](http://godoc.org/github.com/gosimple/spinner)
 
 ## Features
