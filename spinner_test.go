@@ -9,55 +9,6 @@ import (
 	"testing"
 )
 
-var SpinTests = []struct {
-	in  string
-	out []string
-}{
-	{"{Hello|Big} {world|people}!",
-		[]string{
-			"Big world!",
-			"Big people!",
-			"Hello world!",
-			"Hello people!",
-		},
-	},
-	{"I like {{some|a few{ kinds| types|} of} tacos|pizza}.",
-		[]string{
-			"I like pizza.",
-			"I like some tacos.",
-			"I like a few of tacos.",
-			"I like a few kinds of tacos.",
-			"I like a few types of tacos.",
-		},
-	},
-	{"{I like some}}} pizza.",
-		[]string{
-			"I like some}} pizza.",
-		},
-	},
-	{"I like some}{} pizza.",
-		[]string{
-			"I like some} pizza.",
-		},
-	},
-	{"{{{I like some} pizza.",
-		[]string{
-			"{{I like some pizza.",
-		},
-	},
-}
-
-func TestSpin(t *testing.T) {
-	for index, st := range SpinTests {
-		spinned := Spin(st.in)
-		if !contain(st.out, spinned) {
-			t.Errorf(
-				"%d. Spin(%q) => out = %q, want one of %q",
-				index, st.in, spinned, st.out)
-		}
-	}
-}
-
 // Check if list contain value
 func contain(list []string, value interface{}) bool {
 	for _, listValue := range list {
@@ -66,4 +17,52 @@ func contain(list []string, value interface{}) bool {
 		}
 	}
 	return false
+}
+
+func TestSpin(t *testing.T) {
+	testCases := []struct {
+		in   string
+		want []string
+	}{
+		{"{Hello|Big} {world|people}!",
+			[]string{
+				"Big world!",
+				"Big people!",
+				"Hello world!",
+				"Hello people!",
+			},
+		},
+		{"I like {{some|a few{ kinds| types|} of} tacos|pizza}.",
+			[]string{
+				"I like pizza.",
+				"I like some tacos.",
+				"I like a few of tacos.",
+				"I like a few kinds of tacos.",
+				"I like a few types of tacos.",
+			},
+		},
+		{"{I like some}}} pizza.",
+			[]string{
+				"I like some}} pizza.",
+			},
+		},
+		{"I like some}{} pizza.",
+			[]string{
+				"I like some} pizza.",
+			},
+		},
+		{"{{{I like some} pizza.",
+			[]string{
+				"{{I like some pizza.",
+			},
+		},
+	}
+
+	for _, tc := range testCases {
+		got := Spin(tc.in)
+		if !contain(tc.want, got) {
+			t.Errorf(
+				"Spin(%#v) = %#v; want one of %#v", tc.in, got, tc.want)
+		}
+	}
 }
