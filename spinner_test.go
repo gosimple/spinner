@@ -66,3 +66,15 @@ func TestSpin(t *testing.T) {
 		}
 	}
 }
+
+func BenchmarkSpin(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		Spin("I like {{some|a few{ kinds| types|} of} tacos|pizza}.")
+	}
+}
+
+func BenchmarkChooseText(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		chooseText("some|kinds|types|tacos|pizza")
+	}
+}
