@@ -52,7 +52,7 @@ func Spin(text string) (spinned string) {
 	return endString
 }
 
-// chooseText will choose random text from a string (text separator: |)
+// chooseText will choose random text from a string (text separator: |).
 func chooseText(st string) string {
 	if strings.Contains(st, "|") {
 		choices := strings.Split(st, "|")
