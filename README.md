@@ -5,8 +5,6 @@ Package `spinner` implements simple text spinner.
 
 [![GoDoc](https://godoc.org/github.com/gosimple/spinner?status.png)](https://godoc.org/github.com/gosimple/spinner)
 
-[Documentation online](http://godoc.org/github.com/gosimple/spinner)
-
 ## Features
 
 + Supported brackets: curly ({}) and square ([])
