@@ -8,9 +8,9 @@ Package spinner implements text spinner. Useful for generating semirandom text.
 
 Features:
 
- - Supported brackets: curly ({}) and square ([])
- - Supported text separators: | and ~
- - Unlimited nesting
+ + Supported brackets: curly ({}) and square ([])
+ + Supported text separators: | and ~
+ + Unlimited nesting
 
 Example:
 
