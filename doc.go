@@ -6,13 +6,13 @@
 /*
 Package spinner implements text spinner. Useful for generating semirandom text.
 
-## Features
+Features:
 
-+ Supported brackets: curly ({}) and square ([])
-+ Supported text separators: | and ~
-+ Unlimited nesting
+ + Supported brackets: curly ({}) and square ([])
+ + Supported text separators: | and ~
+ + Unlimited nesting
 
-## Example
+Example:
 
 	text := "{Hello|Big} {world|people}!"
 	fmt.Println(spinner.Spin(text))
