@@ -1,4 +1,4 @@
-on: 
+on:
   issue_comment:
     types: [created]
 
@@ -9,12 +9,12 @@ jobs:
     if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/rebase')
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout the latest code
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+      - name: Checkout the latest code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-    - name: Automatic Rebase
-      uses: cirrus-actions/rebase@1.3.1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Automatic Rebase
+        uses: cirrus-actions/rebase@1.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
