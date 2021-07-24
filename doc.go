@@ -4,7 +4,7 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 /*
-Package spinner implements text spinner.
+Package spinner implements text spinner. Useful for generating semirandom text.
 
 Features:
 
@@ -16,7 +16,11 @@ Example:
 
 	text := "{Hello|Big} {world|people}!"
 	fmt.Println(spinner.Spin(text))
-	// Will print: Hello world! or Big world! or Hello people! or Big people!
+	// Possible outputs: 
+	//   Hello world!
+	//   Big world!
+	//   Hello people!
+	//   Big people!
 
 Requests or bugs?
 

@@ -1,9 +1,10 @@
 spinner
 =======
 
-Package `spinner` implements simple text spinner.
+[![Go Reference](https://pkg.go.dev/badge/github.com/gosimple/spinner.svg)](https://pkg.go.dev/github.com/gosimple/spinner)
+[![Tests](https://github.com/gosimple/spinner/actions/workflows/tests.yml/badge.svg)](https://github.com/gosimple/spinner/actions/workflows/tests.yml)
 
-[![GoDoc](https://godoc.org/github.com/gosimple/spinner?status.png)](https://godoc.org/github.com/gosimple/spinner)
+Package `spinner` implements text spinner. Useful for generating semirandom text.
 
 ## Features
 
@@ -15,7 +16,11 @@ Package `spinner` implements simple text spinner.
 
 	text := "{Hello|Big} {world|people}!"
 	fmt.Println(spinner.Spin(text))
-	// Will print: Hello world! or Big world! or Hello people! or Big people!
+	// Possible outputs: 
+	//   Hello world!
+	//   Big world!
+	//   Hello people!
+	//   Big people!
 
 ### Requests or bugs? 
 <https://github.com/gosimple/spinner/issues>
