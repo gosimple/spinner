@@ -16,7 +16,7 @@ Package `spinner` implements text spinner. Useful for generating semirandom text
 
 	text := "{Hello|Big} {world|people}!"
 	fmt.Println(spinner.Spin(text))
-	// Posible outputs: 
+	// Possible outputs: 
 	//   Hello world!
 	//   Big world!
 	//   Hello people!
